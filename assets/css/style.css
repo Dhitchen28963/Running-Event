@@ -18,6 +18,15 @@ body {
     font-family: 'lato', sans-serif;
 }
 
+h1,
+h2,
+h3 {
+    font-family: 'oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #252525;
+}
+
 /* Header */
 header {
     background-color: #ffffff;
@@ -37,13 +46,6 @@ header a {
     color: inherit;
 }
 
-h1 {
-    font-family: 'oswald', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #252525;
-}
-
 #menu {
     text-size-adjust: 110%;
     letter-spacing: 4px;
@@ -53,20 +55,6 @@ h1 {
 /* Targets the list inside the menu element */
 #menu>li {
     margin-bottom: 1em;
-}
-
-/* Main content */
-main {
-    /* Make main element take up any surplus space to push footer down */
-    flex: 1 0 auto;
-    margin-top: 47px;
-}
-
-/* Hwro section */
-#hero {
-    height: 600px;
-    width: 100%;
-    background: url("../images/hero-image.webp") no-repeat center center/cover;
 }
 
 .active {
@@ -96,6 +84,38 @@ nav {
 
 .nav-toggle-label {
     font-size: 2rem;
+}
+
+/* Main content */
+main {
+    /* Make main element take up any surplus space to push footer down */
+    flex: 1 0 auto;
+    margin-top: 47px;
+}
+
+/* Hero section */
+#hero {
+    height: 600px;
+    width: 100%;
+    background: url("../images/hero-image.webp") no-repeat center center/cover;
+    position: relative;
+}
+
+#cover-text {
+    /* Final rgba value sets the opacity so it is semi-transparent */
+    background-color: rgba(241, 109, 107, .7);
+    font-size: 130%;
+    position: absolute;
+    bottom: 30px;
+    width: 80%;
+    min-height: 200px;
+    padding-top: 40px;
+    padding-left: 10px;
+}
+
+#cover-text>h2,
+#cover-text>h3 {
+    color: #ffffff
 }
 
 /* Footer */
@@ -133,14 +153,6 @@ nav {
         padding-left: 1rem;
     }
 
-    #menu {
-        display: flex;
-    }
-
-    #menu>li {
-        padding-left: 1rem;
-    }
-
     .nav-toggle-label {
         display: none;
     }
@@ -157,9 +169,16 @@ nav {
         margin-top: 79px;
     }
 
-    /* Media query: laptops and desktops (992px and up) */
-    @media screen and (min-width: 992px) {
+    /* Hero image */
+    #cover-text {
+        width: 300px;
+        right: 50px;
+    }
+}
 
-        #menu a:hover {
-            border-bottom: 1px solid #3a3a3a;
-        }
+/* Media query: laptops and desktops (992px and up) */
+@media screen and (min-width: 992px) {
+    #menu a:hover {
+        border-bottom: 1px solid #3a3a3a;
+    }
+}
